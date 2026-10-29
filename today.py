@@ -1,49 +1,50 @@
 """Render dark_mode.svg and light_mode.svg: a neofetch-style card with live GitHub stats.
 
-Run daily by .github/workflows/build.yml. Locally: GH_TOKEN=$(gh auth token) python3 today.py
+Run daily by .github/workflows/build.yml. Locally: GH_TOKEN=$(gh auth token) uv run --with pillow today.py
 """
 import json
 import os
 import urllib.request
+from io import BytesIO
 from datetime import date, datetime, timezone
 from html import escape
+
+from PIL import Image, ImageEnhance
 
 USER = "teemoteeo"
 BIRTH = date(2003, 1, 9)
 WIDTH = 57  # characters in the info column
 
-ART = r"""
-,^^^^^``''.   '^;!!!!iiil|!;!,'    'iwMH
-^^^^^``'`^,,;lmwHH%%HMMM@MMMHw{;''..|%MH
-^^^``''ikmMHMMMH%H%%HHMMMHHMMH@Hw{|;i%HH
-````':lwHH%MHw%MMM@@MHMMHMMMMHMMM%mj|wH%
-`'`!j%HHHM%MMHMMHwmwwm{jmwHMMMMHHHMHwwww
-':ijHMHMMMMmm{kji!;:,,,,;!ilkwHHHMMHMHHw
-^;jHHMM%HMkl|!!!;:,```'`,,:!i|{ww%MMHMMw
-'!wHHH%%Mw||l|l|!,'....'''`:!|lllkMMMH%m
-'`|HMHHM@k|l|ii|lj|!^...`,;iljj{jwMHMMMm
-''.|{|lw%|;;!|!j{il|!`.;lj{mk||ljMM%%mkl
-'''.::,il!:^``''``^,;' |l:,!!!|i|{k{{l|i
-i!!::;i!||;^.     .:^.`!i^. .'^;lli:||!:
-!!!!li^,||;:^'.   ::`.`;i^ .'`;lli',i:..
-iii!li.'!i:!:^'  .'^`'^;:^``,ij:.  :!` .
-l||l{!'''ii!!:`^:;;:;i!!|i!;|j;   .:!`
-ljjj{;..^|!i||;:!ii!!i|lllijii:   .;i;^'
-lllj{!`^i!:;!||;,^``^^:;ill{`i:   .!||!,
-{{{{{lll!::,:;ii!;;::;ill||j'|,   .!||;,
-mwmwk:,!!:,^^,::;::!ill|i|ljljl|!^'!|i;,
-wmmkmmi,`,:,^,:^``^,;!;;ill||i:!mwmmkj!:
-%wmmmmwki,```^,,,:;;;;!ii!:,,,;jmmmmw%wm
-mmmmmwmmwm{i,^,^,,^'^;;::``,;jmmmmkmmmww
-mmkmmmmmmmmwmkkli!:,;;:!|jkkmmmmmwwwmmmm
-mmkmmkmmmmmmmmmmmmmmmmmmmmmkkkmwwwmmmmmm
-kkkmkkkkmmmmmmmkkkkmmmmkmmmkmmmmkkkkkkkk
-""".strip("\n").splitlines()
+AVATAR = f"https://github.com/{USER}.png?size=460"
+CROP = (150, 40, 450, 430)  # chair, jacket, face of the current avatar; change it with the picture
+COLS, ROWS = 64, 40
+RAMP = ":-=+*#%@"  # brighter pixel, denser char
 
 THEMES = {
-    "dark_mode.svg": dict(bg="#0e0d10", fg="#f0ecdd", key="#c8f06e", value="#f0ecdd", dots="#4a4852", art="#8a8892"),
-    "light_mode.svg": dict(bg="#f6f5f0", fg="#1a191e", key="#4f7a12", value="#1a191e", dots="#b5b3ad", art="#6b6972"),
+    "dark_mode.svg": dict(bg="#0e0d10", fg="#f0ecdd", key="#c8f06e", value="#f0ecdd", dots="#4a4852", lift=0.6),
+    "light_mode.svg": dict(bg="#f6f5f0", fg="#1a191e", key="#4f7a12", value="#1a191e", dots="#b5b3ad", lift=1),
 }
+
+
+def art():
+    with urllib.request.urlopen(AVATAR) as r:
+        im = Image.open(BytesIO(r.read())).convert("RGB").crop(CROP)
+    im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.4)).enhance(1.2)
+    im = im.resize((COLS, ROWS), Image.LANCZOS)
+    return [[im.getpixel((x, y)) for x in range(COLS)] for y in range(ROWS)]
+
+
+def art_svg(pixels, lift):
+    out = []
+    for y, row in enumerate(pixels):
+        spans = []
+        for r, g, b in row:
+            c = RAMP[min(len(RAMP) - 1, int((0.299 * r + 0.587 * g + 0.114 * b) / 256 * len(RAMP)))]
+            # lift darks so the jacket and chair still read on the dark background
+            r, g, b = (int(255 * (v / 255) ** lift) for v in (r, g, b))
+            spans.append(f'<tspan fill="#{r:02x}{g:02x}{b:02x}">{c}</tspan>')
+        out.append(f'<tspan x="20" y="{24 + y * 12.5}">{"".join(spans)}</tspan>')
+    return "\n".join(out)
 
 
 def uptime(today):
@@ -134,8 +135,7 @@ def line(row):
     return f'<tspan class="cc">. </tspan>{keys}:<tspan class="cc"> {dots} </tspan><tspan class="value">{escape(v)}</tspan>'
 
 
-def svg(t, info):
-    art = "\n".join(f'<tspan x="20" y="{34 + i * 20}">{escape(a)}</tspan>' for i, a in enumerate(ART))
+def svg(t, info, pixels):
     text = "\n".join(f'<tspan x="430" y="{34 + i * 20}">{line(r)}</tspan>' for i, r in enumerate(info))
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="985" height="530" font-size="16" font-family="'JetBrains Mono',SFMono-Regular,Menlo,Consolas,monospace">
 <style>
@@ -143,8 +143,8 @@ def svg(t, info):
 text, tspan {{white-space: pre;}}
 </style>
 <rect width="985" height="530" rx="15" fill="{t['bg']}"/>
-<text fill="{t['art']}">
-{art}
+<text font-size="10" font-weight="bold">
+{art_svg(pixels, t['lift'])}
 </text>
 <text fill="{t['fg']}">
 {text}
@@ -156,7 +156,7 @@ text, tspan {{white-space: pre;}}
 if __name__ == "__main__":
     assert uptime(date(2026, 10, 29)) == "23 years, 9 months, 20 days"
     assert uptime(date(2027, 1, 8)) == "23 years, 11 months, 30 days"
-    info = rows(stats(), date.today())
+    info, pixels = rows(stats(), date.today()), art()
     for name, theme in THEMES.items():
         with open(name, "w") as f:
-            f.write(svg(theme, info))
+            f.write(svg(theme, info, pixels))
