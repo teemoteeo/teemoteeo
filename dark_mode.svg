@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="985" height="530" font-size="16" font-family="'JetBrains Mono',SFMono-Regular,Menlo,Consolas,monospace">
+<style>
+.key {fill: #c8f06e;} .value {fill: #f0ecdd;} .cc {fill: #4a4852;}
+text, tspan {white-space: pre;}
+</style>
+<rect width="985" height="530" rx="15" fill="#0e0d10"/>
+<text fill="#8a8892">
+<tspan x="20" y="34">,^^^^^``&#x27;&#x27;.   &#x27;^;!!!!iiil|!;!,&#x27;    &#x27;iwMH</tspan>
+<tspan x="20" y="54">^^^^^``&#x27;`^,,;lmwHH%%HMMM@MMMHw{;&#x27;&#x27;..|%MH</tspan>
+<tspan x="20" y="74">^^^``&#x27;&#x27;ikmMHMMMH%H%%HHMMMHHMMH@Hw{|;i%HH</tspan>
+<tspan x="20" y="94">````&#x27;:lwHH%MHw%MMM@@MHMMHMMMMHMMM%mj|wH%</tspan>
+<tspan x="20" y="114">`&#x27;`!j%HHHM%MMHMMHwmwwm{jmwHMMMMHHHMHwwww</tspan>
+<tspan x="20" y="134">&#x27;:ijHMHMMMMmm{kji!;:,,,,;!ilkwHHHMMHMHHw</tspan>
+<tspan x="20" y="154">^;jHHMM%HMkl|!!!;:,```&#x27;`,,:!i|{ww%MMHMMw</tspan>
+<tspan x="20" y="174">&#x27;!wHHH%%Mw||l|l|!,&#x27;....&#x27;&#x27;&#x27;`:!|lllkMMMH%m</tspan>
+<tspan x="20" y="194">&#x27;`|HMHHM@k|l|ii|lj|!^...`,;iljj{jwMHMMMm</tspan>
+<tspan x="20" y="214">&#x27;&#x27;.|{|lw%|;;!|!j{il|!`.;lj{mk||ljMM%%mkl</tspan>
+<tspan x="20" y="234">&#x27;&#x27;&#x27;.::,il!:^``&#x27;&#x27;``^,;&#x27; |l:,!!!|i|{k{{l|i</tspan>
+<tspan x="20" y="254">i!!::;i!||;^.     .:^.`!i^. .&#x27;^;lli:||!:</tspan>
+<tspan x="20" y="274">!!!!li^,||;:^&#x27;.   ::`.`;i^ .&#x27;`;lli&#x27;,i:..</tspan>
+<tspan x="20" y="294">iii!li.&#x27;!i:!:^&#x27;  .&#x27;^`&#x27;^;:^``,ij:.  :!` .</tspan>
+<tspan x="20" y="314">l||l{!&#x27;&#x27;&#x27;ii!!:`^:;;:;i!!|i!;|j;   .:!`</tspan>
+<tspan x="20" y="334">ljjj{;..^|!i||;:!ii!!i|lllijii:   .;i;^&#x27;</tspan>
+<tspan x="20" y="354">lllj{!`^i!:;!||;,^``^^:;ill{`i:   .!||!,</tspan>
+<tspan x="20" y="374">{{{{{lll!::,:;ii!;;::;ill||j&#x27;|,   .!||;,</tspan>
+<tspan x="20" y="394">mwmwk:,!!:,^^,::;::!ill|i|ljljl|!^&#x27;!|i;,</tspan>
+<tspan x="20" y="414">wmmkmmi,`,:,^,:^``^,;!;;ill||i:!mwmmkj!:</tspan>
+<tspan x="20" y="434">%wmmmmwki,```^,,,:;;;;!ii!:,,,;jmmmmw%wm</tspan>
+<tspan x="20" y="454">mmmmmwmmwm{i,^,^,,^&#x27;^;;::``,;jmmmmkmmmww</tspan>
+<tspan x="20" y="474">mmkmmmmmmmmwmkkli!:,;;:!|jkkmmmmmwwwmmmm</tspan>
+<tspan x="20" y="494">mmkmmkmmmmmmmmmmmmmmmmmmmmmkkkmwwwmmmmmm</tspan>
+<tspan x="20" y="514">kkkmkkkkmmmmmmmkkkkmmmmkmmmkmmmmkkkkkkkk</tspan>
+</text>
+<text fill="#f0ecdd">
+<tspan x="430" y="34"><tspan class="value">timoteo@costantini-scala</tspan> <tspan class="cc">--------------------------------</tspan></tspan>
+<tspan x="430" y="54"><tspan class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ...................................... </tspan><tspan class="value">macOS, Linux</tspan></tspan>
+<tspan x="430" y="74"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">23 years, 9 months, 20 days</tspan></tspan>
+<tspan x="430" y="94"><tspan class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">42 Firenze, Common Core</tspan></tspan>
+<tspan x="430" y="114"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">Freelance Software Developer</tspan></tspan>
+<tspan x="430" y="134"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">Neovim (Kanagawa Dragon)</tspan></tspan>
+<tspan x="430" y="154"><tspan class="cc">. </tspan><tspan class="key">Shell</tspan>:<tspan class="cc"> ...................................... </tspan><tspan class="value">zsh, cmux</tspan></tspan>
+<tspan x="430" y="174"><tspan class="cc">. </tspan></tspan>
+<tspan x="430" y="194"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan><tspan class="cc">.</tspan><tspan class="key">Programming</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">C, Python, JavaScript, Swift</tspan></tspan>
+<tspan x="430" y="214"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan><tspan class="cc">.</tspan><tspan class="key">Computer</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">HTML, CSS, SQL, JSON</tspan></tspan>
+<tspan x="430" y="234"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan><tspan class="cc">.</tspan><tspan class="key">Real</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Italian, English, French</tspan></tspan>
+<tspan x="430" y="254"><tspan class="cc">. </tspan></tspan>
+<tspan x="430" y="274"><tspan class="cc">. </tspan><tspan class="key">Hobbies</tspan><tspan class="cc">.</tspan><tspan class="key">Software</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">Local LLMs, MLX, RAG</tspan></tspan>
+<tspan x="430" y="294"><tspan class="cc">. </tspan><tspan class="key">Hobbies</tspan><tspan class="cc">.</tspan><tspan class="key">Other</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Basketball, chess, hip-hop</tspan></tspan>
+<tspan x="430" y="314"><tspan class="cc">. </tspan><tspan class="key">Past</tspan><tspan class="cc">.</tspan><tspan class="key">Fashion</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">Model for Valentino, Zegna, Prada</tspan></tspan>
+<tspan x="430" y="334"><tspan class="cc">. </tspan><tspan class="key">Past</tspan><tspan class="cc">.</tspan><tspan class="key">Food</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">Fine dining, Armani Paris</tspan></tspan>
+<tspan x="430" y="354"><tspan class="value">Contact</tspan> <tspan class="cc">-------------------------------------------------</tspan></tspan>
+<tspan x="430" y="374"><tspan class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">timoteocostantiniscala@gmail.com</tspan></tspan>
+<tspan x="430" y="394"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value">timoteo-costantini-scala</tspan></tspan>
+<tspan x="430" y="414"><tspan class="cc">. </tspan><tspan class="key">Instagram</tspan>:<tspan class="cc"> .................................. </tspan><tspan class="value">teemoteeo</tspan></tspan>
+<tspan x="430" y="434"><tspan class="cc">. </tspan><tspan class="key">Web</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">teemoteeo.github.io/timoteo-site</tspan></tspan>
+<tspan x="430" y="454"><tspan class="value">GitHub Stats</tspan> <tspan class="cc">--------------------------------------------</tspan></tspan>
+<tspan x="430" y="474"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">9 {Contributed: 0} | Stars: 0</tspan></tspan>
+<tspan x="430" y="494"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">271 | Followers: 5</tspan></tspan>
+</text>
+</svg>
